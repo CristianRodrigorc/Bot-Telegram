@@ -18,7 +18,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Comandos disponibles:\n"
         "/clima <ciudad>: Obtén el clima actual de una ciudad.\n"
         "/noticias: Obtén las noticias más relevantes del día.\n"
-        "/crypto: Obtén el precio de las principales criptomonedas.\n"
+        "/crypto <nombre_criptomoneda>: Obtén el precio de las principales criptomonedas cómo bitcoin, ethereum, etc.\n"
         )
 
 # clima

@@ -16,3 +16,6 @@ Un bot de Telegram hecho en **Python** que permite:
    ```bash
    git clone https://github.com/tu_usuario/mi_bot_telegram.git
    cd mi_bot_telegram
+
+## Probar el bot
+Abre Telegram y busca: [@noticias_clima_cripto_bot](https://t.me/noticias_clima_cripto_bot)
