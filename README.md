@@ -19,3 +19,8 @@ Un bot de Telegram hecho en **Python** que permite:
 
 ## Probar el bot
 Abre Telegram y busca: [@noticias_clima_cripto_bot](https://t.me/noticias_clima_cripto_bot)
+
+
+## Comandos para desplegar
+Build Command: pip install -r requirements.txt
+Start Command: python bot.py
