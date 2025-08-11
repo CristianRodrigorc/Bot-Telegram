@@ -1,0 +1,21 @@
+app = "bot-telegram-localwolf"
+
+[env]
+# Las variables de entorno se configurarán con fly secrets set
+
+[build]
+  image = "python:3.11-slim"
+
+[processes]
+  app = "python bot.py"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
