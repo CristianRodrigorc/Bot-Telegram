@@ -16,6 +16,7 @@ __pycache__/
 .gitignore
 README.md
 ejemplo.env
+DEPLOY.md
 
 # Archivos del sistema
 .DS_Store

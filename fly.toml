@@ -1,21 +1,33 @@
-app = "bot-telegram-localwolf"
+# fly.toml app configuration file generated for bot-telegram-localwolf on 2025-08-11T03:25:50+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-[env]
-# Las variables de entorno se configurarán con fly secrets set
+app = 'bot-telegram-localwolf'
+primary_region = 'cdg'
 
 [build]
-  image = "python:3.11-slim"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+  [http_service.concurrency]
+    type = "connections"
+    hard_limit = 25
+    soft_limit = 20
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[deploy]
+  strategy = "immediate"
+  release_command = ""
 
 [processes]
   app = "python bot.py"
-
-[[services]]
-  internal_port = 8080
-  protocol = "tcp"
-
-  [[services.ports]]
-    port = 80
-    handlers = ["http"]
-  [[services.ports]]
-    port = 443
-    handlers = ["tls", "http"]
